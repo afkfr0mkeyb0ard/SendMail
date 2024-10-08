@@ -5,6 +5,16 @@ import sys
 
 msg = EmailMessage()
 
+if "-h" in sys.argv:
+	print("""> python3 sendmail.py -to "recipient@domain.com" -from "sender@domain.com" -t "newoffer.html" -s 'New offer for you' [-H] [-rt 'attacker@domain.com'] """)
+	print("	-to 	recipient email address")
+	print("	-from 	sender email address")
+	print("	-t 	email template (HTML file in /templates folder)")
+	print("	-s 	email subject")
+	print("	-H 	set High priority email (optional)")
+	print("	-rt	set reply-to header to automatically reply to another address (optional)")
+	sys.exit()
+
 if not "-to" in sys.argv:
 	sys.exit("[-] Please specify an address where to send the mail (-to recipient@domain.com).")
 else:
@@ -31,7 +41,7 @@ else:
 	try:
 		TEMPLATE = sys.argv[i+1]
 	except Exception as e:
-		sys.exit("[-] The template file is invalid or does not exist in templates folder (-t newoffer.html).")
+		sys.exit("[-] The template file is invalid or does not exist (-t newoffer.html).")
 
 if not "-s" in sys.argv:
 	sys.exit("[-] Please specify a subject (-s 'New offer!!').")
