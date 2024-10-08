@@ -1,6 +1,13 @@
 # SendMail
 Python script to send emails using local SMTP server
 
+## Install dependencies
+
+```
+> sudo apt-get install sendmail
+> sudo systemctl start sendmail.service
+```
+
 ## How to use
 
 ```
