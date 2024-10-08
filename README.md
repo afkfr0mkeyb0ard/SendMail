@@ -4,7 +4,7 @@ Python script to send emails using local SMTP server
 ## How to use
 
 ```
-> python3 sendmail.py -to "recipient@domain.com" -from "sender@domain.com" -t "newoffer.html" -s 'New offer for you' [-H] [-rt 'attacker@domain.com']
+> python3 sendmail.py -to 'recipient@domain.com' -from 'sender@domain.com' -t 'newoffer.html' -s 'New offer for you' [-H] [-rt 'attacker@domain.com']
 	-to 	recipient email address
 	-from 	sender email address
 	-t 	email template (HTML file in /templates folder)
